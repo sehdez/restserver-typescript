@@ -1,0 +1,41 @@
+// Comenzar a utilizar Ts
+tsc --init
+en el tsconfig configurar 
+"target": "es6",
+"outDir": "./dist", 
+"sourceMap": true,
+"moduleResolution": "node",
+
+instalar 
+npm i tslint --save-dev
+npm i tsc --save-dev
+
+ejecutar;
+./node_modules/.bin/tslint --init
+modificar tslint.json
+en rules{
+    "no-console":false
+}
+
+tsc --watch para que esté al pendiente de los cambios en los archivos tsc
+y hacer un nodemon dist/index para recargar los cambios en los archivos js
+
+
+Instalar Sequelize
+npm i --save sequelize
+
+instalar dependiendo la BD 
+$ npm install --save pg pg-hstore # Postgres
+$ npm install --save mysql2  ---
+$ npm install --save mariadb
+$ npm install --save sqlite3
+$ npm install --save tedious # Microsoft SQL Server
+
+coneccion a bd:
+import { Sequelize } from'sequelize';
+const db = new Sequelize('tsusuario', 'root', '', {
+    host: 'localhost',
+    dialect: 'mysql',
+    // logging: false
+});
+export default db;
